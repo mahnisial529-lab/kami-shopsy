@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Kami Shopsy Sitemap
+  Domain: Update "https://kamishospy.icp" with your actual ICP canister URL
+  once your app is fully deployed and you receive the live URL.
+  Dynamic routes (categories & products) are not listed here because they are
+  loaded from the backend at runtime. Google will discover them via crawling
+  the homepage and following internal links.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage — highest priority, crawled daily -->
+  <url>
+    <loc>https://kamishospy.icp/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- All Products listing -->
+  <url>
+    <loc>https://kamishospy.icp/category/all</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Checkout page -->
+  <url>
+    <loc>https://kamishospy.icp/checkout</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!--
+    Dynamic URLs (auto-discovered by Google via internal links):
+    - /category/{id}  — one page per category (12 categories)
+    - /product/{id}   — one page per product (up to 240 products)
+    Google will crawl these automatically once it indexes the homepage.
+  -->
+
+</urlset>

@@ -1,0 +1,109 @@
+// Version: 3.0.0
+type Announcement__804620264 =
+  {createdAt : Int; id : Text; isActive : Bool; message : Text};
+type CategoryId__742458634 = Nat;
+type Category__1033223568 =
+  {
+    description : Text;
+    id : CategoryId__742458634;
+    imageUrl : Text;
+    name : Text;
+    videoUrl : ?Text
+  };
+type List__415060402<T> = List__790383201<T>;
+type List__790383201<T> =
+  {
+    var blockIndex : Nat__490723111;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__490723111
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type OrderId__1013623409 = Nat;
+type OrderItem__467338913 =
+  {
+    price : Nat;
+    productId : ProductId__493388894;
+    productName : Text;
+    quantity : Nat
+  };
+type Order__891188967 =
+  {
+    address : Text;
+    city : Text;
+    createdAt : Int;
+    customerName : Text;
+    id : OrderId__1013623409;
+    items : [OrderItem__467338913];
+    paymentMethod : Text;
+    phone : Text;
+    status : Text;
+    totalAmount : Nat
+  };
+type ProductId__493388894 = Nat;
+type Product__432092776 =
+  {
+    available : Bool;
+    categoryId : CategoryId__742458634;
+    description : Text;
+    discountEnabled : Bool;
+    discountPercent : Nat;
+    id : ProductId__493388894;
+    imageUrls : [Text];
+    name : Text;
+    price : Nat;
+    slotIndex : Nat;
+    videoUrl : ?Text
+  };
+type Review__861087971 =
+  {
+    comment : Text;
+    createdAt : Int;
+    id : Nat;
+    productId : Nat;
+    rating : Nat;
+    reviewerName : Text
+  };
+actor ({
+  in adminPasswordHashBox : {var val : Text};
+  in announcementBox : {var val : ?Announcement__804620264};
+  in categories : List__415060402<Category__1033223568>;
+  in nextCategoryIdBox : {var val : Nat};
+  in nextOrderIdBox : {var val : Nat};
+  in nextProductIdBox : {var val : Nat};
+  in nextReviewIdBox : {var val : Nat};
+  in orders : List__415060402<Order__891188967>;
+  in products : List__415060402<Product__432092776>;
+  in reviews : List__415060402<Review__861087971>
+}, {
+  stable adminPasswordHashBox : {var val : Text};
+  stable announcementBox : {var val : ?Announcement__804620264};
+  stable categories :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Category__1033223568]];
+      var elementIndex : Nat__490723111
+    };
+  stable nextCategoryIdBox : {var val : Nat};
+  stable nextOrderIdBox : {var val : Nat};
+  stable nextProductIdBox : {var val : Nat};
+  stable nextReviewIdBox : {var val : Nat};
+  stable orders :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Order__891188967]];
+      var elementIndex : Nat__490723111
+    };
+  stable products :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Product__432092776]];
+      var elementIndex : Nat__490723111
+    };
+  stable reviews :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Review__861087971]];
+      var elementIndex : Nat__490723111
+    }
+}) ;

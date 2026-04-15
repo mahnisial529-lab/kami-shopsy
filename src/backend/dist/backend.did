@@ -1,0 +1,104 @@
+type Review = 
+ record {
+   comment: text;
+   createdAt: int;
+   id: nat;
+   productId: nat;
+   rating: nat;
+   reviewerName: text;
+ };
+type ProductId = nat;
+type Product = 
+ record {
+   available: bool;
+   categoryId: CategoryId;
+   description: text;
+   discountEnabled: bool;
+   discountPercent: nat;
+   id: ProductId;
+   imageUrls: vec text;
+   name: text;
+   price: nat;
+   slotIndex: nat;
+   videoUrl: opt text;
+ };
+type PlaceOrderRequest = 
+ record {
+   address: text;
+   city: text;
+   customerName: text;
+   items: vec OrderItem;
+   paymentMethod: text;
+   phone: text;
+ };
+type OrderItem = 
+ record {
+   price: nat;
+   productId: ProductId;
+   productName: text;
+   quantity: nat;
+ };
+type OrderId = nat;
+type Order = 
+ record {
+   address: text;
+   city: text;
+   createdAt: int;
+   customerName: text;
+   id: OrderId;
+   items: vec OrderItem;
+   paymentMethod: text;
+   phone: text;
+   status: text;
+   totalAmount: nat;
+ };
+type CategoryId = nat;
+type Category = 
+ record {
+   description: text;
+   id: CategoryId;
+   imageUrl: text;
+   name: text;
+   videoUrl: opt text;
+ };
+type Announcement = 
+ record {
+   createdAt: int;
+   id: text;
+   isActive: bool;
+   message: text;
+ };
+service : {
+  addCategory: (name: text, description: text, imageUrl: text, videoUrl:
+   opt text) -> (Category);
+  addProduct: (categoryId: CategoryId, name: text, description: text, price:
+   nat, imageUrls: vec text, videoUrl: opt text, available: bool, slotIndex:
+   nat, discountEnabled: bool, discountPercent: nat) -> (Product);
+  addReview: (productId: nat, reviewerName: text, rating: nat, comment:
+   text) -> (variant {
+               err: text;
+               ok: Review;
+             });
+  adminLogin: (password: text) -> (bool);
+  deleteCategory: (id: CategoryId) -> (bool);
+  deleteProduct: (id: ProductId) -> (bool);
+  getActiveAnnouncement: () -> (opt Announcement) query;
+  getAllOrders: () -> (vec Order) query;
+  getAllProducts: () -> (vec Product) query;
+  getCategories: () -> (vec Category) query;
+  getProductReviews: (productId: nat) -> (vec Review) query;
+  getProductSlots: (categoryId: CategoryId) -> (vec Product) query;
+  getProductsByCategory: (categoryId: CategoryId) -> (vec Product) query;
+  initializeCategorySlots: (categoryId: CategoryId) -> (bool);
+  placeOrder: (req: PlaceOrderRequest) -> (Order);
+  setAdminPassword: (oldPassword: text, newPassword: text) -> (bool);
+  setAnnouncement: (message: text, isActive: bool) -> (bool);
+  toggleAnnouncement: (isActive: bool) -> (bool);
+  updateCategory: (id: CategoryId, name: text, description: text, imageUrl:
+   text, videoUrl: opt text) -> (bool);
+  updateOrderStatus: (id: OrderId, status: text) -> (bool);
+  updateProduct: (id: ProductId, categoryId: CategoryId, name: text,
+   description: text, price: nat, imageUrls: vec text, videoUrl: opt text,
+   available: bool, slotIndex: nat, discountEnabled: bool, discountPercent:
+   nat) -> (bool);
+}

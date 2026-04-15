@@ -1,0 +1,33 @@
+{
+  "name": "Kami Shopsy",
+  "short_name": "Kami Shopsy",
+  "description": "Pakistan ka behtareen online store. Perfume, Ladies Collection, Mens Collection, Baby Collection, Home Decor aur bahut kuch.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#b8860b",
+  "lang": "ur",
+  "dir": "ltr",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    {
+      "src": "/assets/images/kami-shopsy-logo.jpeg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/images/kami-shopsy-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

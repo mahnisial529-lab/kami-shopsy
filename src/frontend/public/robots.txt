@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block admin area from search engines
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin-login
+Disallow: /admin-dashboard
+Disallow: /admin-categories
+Disallow: /admin-orders
+Disallow: /admin-products
+
+# Sitemap location
+# Update the domain below once your ICP canister URL is confirmed
+Sitemap: https://kamishospy.icp/sitemap.xml

@@ -1,0 +1,24 @@
+{
+  "overview": "Kami Shopsy is a full-featured online store with 12 product categories, 20+ items per category, checkout with Cash on Delivery or EasyPaisa payment, WhatsApp order notifications, and a password-protected admin panel.",
+  "features": [
+    "12 product categories (Perfume, Ladies, Mens, Baby, Home Decor, etc.)",
+    "20+ products per category with images and prices",
+    "Customer checkout with Name, Phone, Address, City",
+    "Cash on Delivery and EasyPaisa (03457393786) payment options",
+    "WhatsApp order notifications to 03457393786",
+    "Password-protected admin panel for products and categories",
+    "Admin can add/edit/delete products and prices",
+    "Kami Shopsy branded header with uploaded logo"
+  ],
+  "category": "e-commerce",
+  "tags": [
+    "store",
+    "shopping",
+    "e-commerce",
+    "admin",
+    "whatsapp",
+    "pakistan",
+    "easypaisa"
+  ],
+  "last_updated": "2026-04-10T11:04:28.565Z"
+}
